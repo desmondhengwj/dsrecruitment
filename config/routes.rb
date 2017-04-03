@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :requests
   devise_for :users
   root 'static#homepage'
   resources :jobs

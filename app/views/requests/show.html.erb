@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Confirmation:</strong>
+  <%= @request.confirmation %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @request.user %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @request.job %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
