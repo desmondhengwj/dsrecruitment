@@ -2,7 +2,7 @@
 
 <p>
   <strong>Confirmation:</strong>
-  <%= @request.confirmation %>
+  Pending
 </p>
 
 <p>
@@ -11,10 +11,19 @@
 </p>
 
 <p>
-  <strong>Job:</strong>
-  <%= @request.job %>
+  <strong>Location:</strong>
+  <%= @request.job.location %>
 </p>
 
+<p>
+  <strong>Start Time:</strong>
+  <%= @request.job.start_time.to_time.strftime("%H:%M %p") %>
+</p>
+
+<p>
+  <strong>End Time:</strong>
+  <%= @request.job.end_time.to_time.strftime("%H:%M %p") %>
+</p>
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>
