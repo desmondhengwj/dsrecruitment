@@ -87,5 +87,6 @@
 </div>
 
 <br>
-
-<%= link_to 'New Job', new_job_path %>
+<% if current_user.email == 'desmond@dsrecruitment.sg' %>
+<%= link_to 'Add New Job', new_job_path %><br>
+<% end %>
