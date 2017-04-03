@@ -1,24 +1,38 @@
-# README
+# DS Recruitment
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Heroku Link
+https://dsrecruitment.herokuapp.com/
 
-Things you may want to cover:
+## Things to change for 2FA
+* Install devise
+* Run the devise generators
+* Migrate the database
+* Adding two factor authentication to Devise with Authy
+* Create an initialiser for Authy in config/initializers.
+* Add the following code to the initialiser.
+* Run Devise Authy install script
 
-* Ruby version
+## Enabling Authy
+https://dsrecruitment.herokuapp.com/users/enable_authy
 
-* System dependencies
+## Twilio console
+https://www.twilio.com/console
 
-* Configuration
+## Running the app
 
-* Database creation
+You can run the app with the following commands:
 
-* Database initialization
+```
+$ git clone https://github.com/desmondhengwj/dsrecruitment.git
+$ cd dsrecruitment
+$ bundle install
+$ bundle exec rails server
+```
 
-* How to run the test suite
+## Things I need to do
+* It's extremely buggy still
+* Add a request model
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Extra features
+* Do a Appointment Reminder module with Twilio
+* Do an admin page whereby I can send SMS to everybody in my database
