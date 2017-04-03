@@ -11,13 +11,19 @@
 </p>
 
 <p>
+  <strong>Day:</strong>
+  <%= @job.start_time.to_time.strftime("%a") %>
+</p>
+
+
+<p>
   <strong>Start time:</strong>
-  <%= @job.start_time %>
+  <%= @job.start_time.to_time.strftime("%H:%M %p") %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @job.end_time %>
+  <%= @job.end_time.to_time.strftime("%H:%M %p") %>
 </p>
 
 <p>
@@ -31,12 +37,7 @@
 </p>
 
 <p>
-  <strong>Completed:</strong>
-  <%= @job.completed %>
-</p>
-
-<p>
-    <a href="/requests/new/?service_id=<%=params[:id]%>" class="btn btn-info" style="color:white">Request</a>
+    <a href="/requests/new/?jobs_id=<%=params[:id]%>" class="btn btn-info" style="color:white">Request</a>
 </p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |
