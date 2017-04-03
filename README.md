@@ -26,7 +26,7 @@ You can run the app with the following commands:
 $ git clone https://github.com/desmondhengwj/dsrecruitment.git
 $ cd dsrecruitment
 $ bundle install
-$ bundle exec rails server
+$ rails server
 ```
 
 ## Things I need to do
