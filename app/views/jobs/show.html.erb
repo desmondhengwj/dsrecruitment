@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @job.location %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @job.date %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @job.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @job.end_time %>
+</p>
+
+<p>
+  <strong>No of slots:</strong>
+  <%= @job.no_of_slots %>
+</p>
+
+<p>
+  <strong>Rate per hour:</strong>
+  <%= @job.rate_per_hour %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @job.completed %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

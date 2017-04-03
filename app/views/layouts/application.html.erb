@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ds Recruitment</title>
+        <%= csrf_meta_tags %>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">DS Recruitment</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="/jobs">All Jobs</a>
+                        </li>
+                    </ul>
+                    <p class="navbar-text pull-right">
+                  <% if user_signed_in? %>
+                    Logged in as <strong><%= current_user.email %></strong>.
+                    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+                    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                  <% else %>
+                    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+                  <% end %>
+
+                </div>
+            </div>
+        </nav>
+        <% if notice %>
+        <p class="notice"><%= notice %></p>
+        <% end %>
+
+        <% if alert %>
+        <p class="alert"><%= alert %></p>
+        <% end %>
+
+        <br>
+        <div class="container">
+            <%= yield %>
+        </div>
+
+        <footer>
+            <div class="container">
+                DS Recruitment
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>
