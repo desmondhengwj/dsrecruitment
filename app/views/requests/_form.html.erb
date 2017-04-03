@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" hidden="true">
     <%= f.label :confirmation %>
     <%= f.check_box :confirmation %>
   </div>
 
-  <div class="field">
+  <div class="field" hidden="true">
     <%= f.label :user_id %>
     <%= f.text_field :user_id, :value => current_user.id %>
   </div>
 
-  <div class="field">
+  <div class="field" hidden="true">
     <%= f.label :job_id %>
     <%= f.text_field :job_id, :value => params[:jobs_id] %>
   </div>
