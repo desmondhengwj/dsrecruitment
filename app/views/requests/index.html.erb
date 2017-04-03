@@ -2,12 +2,15 @@
 
 <h1>Requests</h1>
 
-<table>
+
+  <table class = "table table-hover">
   <thead>
     <tr>
       <th>Confirmation</th>
       <th>User</th>
-      <th>Job</th>
+      <th>Location</th>
+      <th>Start Time</th>
+      <th>End Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +19,10 @@
     <% @requests.each do |request| %>
       <tr>
         <td><%= request.confirmation %></td>
-        <td><%= request.user %></td>
-        <td><%= request.job %></td>
+        <td><%= request.user.email %></td>
+        <td><%= request.job.location %></td>
+        <td><%= request.job.start_time.to_time.strftime("%H:%M %p") %></td>
+        <td><%= request.job.end_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>
         <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>

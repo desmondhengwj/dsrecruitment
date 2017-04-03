@@ -7,13 +7,14 @@
 
 <p>
   <strong>User:</strong>
-  <%= @request.user %>
+  <%= @request.user.email %>
 </p>
 
 <p>
   <strong>Job:</strong>
   <%= @request.job %>
 </p>
+
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>

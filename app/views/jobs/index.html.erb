@@ -30,9 +30,10 @@
         <td><%= job.end_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= job.no_of_slots %></td>
         <td>$<%= job.rate_per_hour %></td>
+        <td><%= link_to 'Show', job %></td>
         <% if current_user.email == 'desmond@dsrecruitment.sg' %>
           <!-- true -->
-        <td><%= link_to 'Show', job %></td>
+
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
