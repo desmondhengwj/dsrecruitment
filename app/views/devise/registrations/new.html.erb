@@ -7,17 +7,17 @@
 
   <div class="field">
   <%= f.label :name, 'Full name as of NRIC' %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :required => true %>
   </div>
 
   <div class="field">
   <%= f.label :nric, 'NRIC' %>
-  <%= f.text_field :nric %>
+  <%= f.text_field :nric, :required => true %>
   </div>
 
   <div class="field">
   <%= f.label :contact, 'Contact Number' %>
-  <%= f.text_field :contact %>
+  <%= f.text_field :contact, :required => true %>
   </div>
 
   <div class="field">
@@ -27,12 +27,12 @@
 
   <div class="field">
   <%= f.label :date_of_birth, 'Date of Birth' %>
-  <%= f.date_field :date_of_birth %>
+  <%= f.date_field :date_of_birth, :required => true %>
   </div>
 
   <div class="field">
   <%= f.label :address, 'Address' %>
-  <%= f.text_field :address %>
+  <%= f.text_field :address, :required => true %>
   </div>
 
   <div class="field">
@@ -47,12 +47,12 @@
 
   <div class="field">
   <%= f.label :bank_name, 'Bank Name' %>
-  <%= f.text_field :bank_name %>
+  <%= f.text_field :bank_name, :required => true %>
   </div>
 
   <div class="field">
   <%= f.label :bank_account_number, 'Bank Account Number' %>
-  <%= f.text_field :bank_account_number %>
+  <%= f.text_field :bank_account_number, :required => true %>
   </div>
 
   <div class="field">

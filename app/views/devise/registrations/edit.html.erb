@@ -3,73 +3,71 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-<h3>Personal Detail</h3>
+  <div class="field">
+  <%= f.label :name, 'Full name as of NRIC' %>
+  <%= f.text_field :name, :required => true %>
+  </div>
 
-<div class="field">
-<%= f.label :name, 'Full name as of NRIC' %>
-<%= f.text_field :name %>
-</div>
+  <div class="field">
+  <%= f.label :nric, 'NRIC' %>
+  <%= f.text_field :nric, :required => true %>
+  </div>
 
-<div class="field">
-<%= f.label :nric, 'NRIC' %>
-<%= f.text_field :nric %>
-</div>
+  <div class="field">
+  <%= f.label :contact, 'Contact Number' %>
+  <%= f.text_field :contact, :required => true %>
+  </div>
 
-<div class="field">
-<%= f.label :contact, 'Contact Number' %>
-<%= f.text_field :contact %>
-</div>
+  <div class="field">
+  <%= f.label :gender, 'Gender' %>
+  <%= f.select :gender, [['Male','male'],['Female','female']] %>
+  </div>
 
-<div class="field">
-<%= f.label :gender, 'Gender' %>
-<%= f.select :gender, [['Male','male'],['Female','female']] %>
-</div>
+  <div class="field">
+  <%= f.label :date_of_birth, 'Date of Birth' %>
+  <%= f.date_field :date_of_birth, :required => true %>
+  </div>
 
-<div class="field">
-<%= f.label :date_of_birth, 'Date of Birth' %>
-<%= f.date_field :date_of_birth %>
-</div>
+  <div class="field">
+  <%= f.label :address, 'Address' %>
+  <%= f.text_field :address, :required => true %>
+  </div>
 
-<div class="field">
-<%= f.label :address, 'Address' %>
-<%= f.text_field :address %>
-</div>
+  <div class="field">
+  <%= f.label :student_status, 'Are you currently a student?' %>
+  <%= f.select :student_status, [['No','no'],['Yes','yes']] %>
+  </div>
 
-<div class="field">
-<%= f.label :student_status, 'Are you currently a student?' %>
-<%= f.select :student_status, [['No','no'],['Yes','yes']] %>
-</div>
+  <div class="field">
+  <%= f.label :student_school, 'If you are a student, which school are you currently studying in?' %>
+  <%= f.text_field :student_school %>
+  </div>
 
-<div class="field">
-<%= f.label :student_school, 'If you are a student, which school are you currently studying in?' %>
-<%= f.text_field :student_school %>
-</div>
+  <div class="field">
+  <%= f.label :bank_name, 'Bank Name' %>
+  <%= f.text_field :bank_name, :required => true %>
+  </div>
 
-<div class="field">
-<%= f.label :bank_name, 'Bank Name' %>
-<%= f.text_field :bank_name %>
-</div>
+  <div class="field">
+  <%= f.label :bank_account_number, 'Bank Account Number' %>
+  <%= f.text_field :bank_account_number, :required => true %>
+  </div>
 
-<div class="field">
-<%= f.label :bank_account_number, 'Bank Account Number' %>
-<%= f.text_field :bank_account_number %>
-</div>
+  <div class="field">
+  <%= f.label :colored_hair_status, 'Do you have colored hair?' %>
+  <%= f.select :colored_hair_status, [['No','no'],['Yes','yes']] %>
+  </div>
 
-<div class="field">
-<%= f.label :colored_hair_status, 'Do you have colored hair?' %>
-<%= f.select :colored_hair_status, [['No','no'],['Yes','yes']] %>
-</div>
+  <div class="field">
+  <%= f.label :tattoo_status, 'Do you have visible tattoos?' %>
+  <%= f.select :tattoo_status, [['No','no'],['Yes','yes']] %>
+  </div>
 
-<div class="field">
-<%= f.label :tattoo_status, 'Do you have visible tattoos?' %>
-<%= f.select :tattoo_status, [['No','no'],['Yes','yes']] %>
-</div>
-
-<div class="field" hidden="true">
-<%= f.label :point, 'Points' %>
-<%= f.text_field :point %>
-</div>
-
+  <div class="field" hidden="true" >
+  <%= f.label :point, 'Points' %>
+  <%= f.text_field :point, :value => "100" %>
+  </div>
+  
 <h3>Login Details</h3>
   <div class="field">
     <%= f.label :email %><br />
