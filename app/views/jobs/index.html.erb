@@ -30,7 +30,7 @@
         <td><%= job.end_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= job.no_of_slots %></td>
         <td>$<%= job.rate_per_hour %></td>
-        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Book', job %></td>
         <% if current_user.email == 'desmond@dsrecruitment.sg' %>
           <!-- true -->
 
@@ -44,7 +44,7 @@
   </tbody>
 </table>
 
-<h1>Job Completed</h1>
+<h1>Past Jobs</h1>
 
 <table class = "table table-hover">
   <thead>

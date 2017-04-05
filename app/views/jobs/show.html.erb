@@ -1,40 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @job.location %>
-</p>
+  <div class="panel panel-default">
+    <div class="panel-heading"><%= @job.location %></div>
+    <div class="panel-body">
+      <div><strong>Date:</strong>
+      <%= @job.date %></div>
+      <div><strong>Day:</strong>
+      <%= @job.start_time.to_time.strftime("%a") %></div>
+      <div><strong>Start time:</strong>
+      <%= @job.start_time.to_time.strftime("%H:%M %p") %></div>
+      <div><strong>End time:</strong>
+      <%= @job.end_time.to_time.strftime("%H:%M %p") %></div>
+      <div><strong>Rate per hour:</strong>
+      $<%= @job.rate_per_hour %>/hr</div>
+    </div>
+  </div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @job.date %>
-</p>
-
-<p>
-  <strong>Day:</strong>
-  <%= @job.start_time.to_time.strftime("%a") %>
-</p>
-
-
-<p>
-  <strong>Start time:</strong>
-  <%= @job.start_time.to_time.strftime("%H:%M %p") %>
-</p>
-
-<p>
-  <strong>End time:</strong>
-  <%= @job.end_time.to_time.strftime("%H:%M %p") %>
-</p>
-
-<p>
-  <strong>No of slots:</strong>
-  <%= @job.no_of_slots %>
-</p>
-
-<p>
-  <strong>Rate per hour:</strong>
-  <%= @job.rate_per_hour %>
-</p>
 
 <p>
     <a href="/requests/new/?jobs_id=<%=params[:id]%>" class="btn btn-info" style="color:white">Request</a>
