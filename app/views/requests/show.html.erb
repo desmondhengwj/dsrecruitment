@@ -1,13 +1,7 @@
 <p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Confirmation:</strong>
-  Pending
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @request.user.email %>
+  <strong>Booked by:</strong>
+  <%= @request.user.name %>
 </p>
 
 <p>
@@ -23,6 +17,17 @@
 <p>
   <strong>End Time:</strong>
   <%= @request.job.end_time.to_time.strftime("%H:%M %p") %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+
+  <% if @request.confirmation == true %>
+    Confirmed
+  <% else %>
+    Pending for Confirmation
+  <% end %>
+
 </p>
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
