@@ -21,12 +21,7 @@
 
 <p>
   <strong>Status:</strong>
-
-  <% if @request.confirmation == true %>
-    Confirmed
-  <% else %>
-    Pending for Confirmation
-  <% end %>
+<%= @request.confirmation%>
 
 </p>
 

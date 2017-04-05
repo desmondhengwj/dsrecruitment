@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170405034649) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.boolean  "confirmation"
+    t.string   "confirmation"
     t.integer  "user_id"
     t.integer  "job_id"
     t.datetime "created_at",   null: false
