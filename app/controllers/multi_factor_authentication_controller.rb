@@ -1,0 +1,2 @@
+class MultiFactorAuthenticationController < ApplicationController
+end
