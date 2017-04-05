@@ -11,12 +11,13 @@
     </div>
   <% end %>
 
+<% if current_user.email != 'desmond@dsrecruitment.sg' %>
   <div class="field" hidden="true">
     <%= f.label :confirmation %>
     <%= f.check_box :confirmation %>
   </div>
 
-  <div class="field" hidden="true">
+  <div class="field" >
     <%= f.label :user_id %>
     <%= f.text_field :user_id, :value => current_user.id %>
   </div>
@@ -25,6 +26,25 @@
     <%= f.label :job_id %>
     <%= f.text_field :job_id, :value => params[:jobs_id] %>
   </div>
+
+<% else %>
+
+<div class="field" >
+  <%= f.label :confirmation %>
+  <%= f.check_box :confirmation %>
+</div>
+
+<div class="field">
+  <%= f.label :user_id %>
+  <%= f.text_field :user_id, :value => current_user.id %>
+</div>
+
+<div class="field">
+  <%= f.label :job_id %>
+  <%= f.text_field :job_id, :value => @request.job_id %>
+</div>
+
+<% end %>
 
   <div class="actions">
     <%= f.submit %>
