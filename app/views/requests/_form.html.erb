@@ -14,7 +14,7 @@
 <% if current_user.email != 'desmond@dsrecruitment.sg' %>
   <div class="field" hidden="true">
     <%= f.label :confirmation %>
-    <%= f.select :confirmation, [['Pending','Pending'],['Confirmed','Confirmed'], ['Slots filled','Slots Filled']] %>
+    <%= f.select :confirmation, [['Pending','Pending'],['Confirmed','Confirmed'], ['Slots Filled','Slots Filled']] %>
   </div>
 
   <div class="field" hidden="true" >
@@ -31,12 +31,12 @@
 
 <div class="field" >
   <%= f.label :confirmation %>
-  <%= f.select :confirmation, [['Pending','Pending'],['Confirmed','Confirmed'], ['Slots filled','Slots Filled']] %>
+  <%= f.select :confirmation, [['Pending','Pending'],['Confirmed','Confirmed'], ['Slots Filled','Slots Filled']] %>
 </div>
 
 <div class="field">
   <%= f.label :user_id %>
-  <%= f.text_field :user_id, :value => current_user.id %>
+  <%= f.text_field :user_id, :value => @request.user_id %>
 </div>
 
 <div class="field">

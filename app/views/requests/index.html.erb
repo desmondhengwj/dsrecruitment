@@ -78,7 +78,7 @@
 
   <tbody>
     <% @requests.each do |request| %>
-    <% if current_user.email == request.user.email && request.confirmation == "Slots filled" %>
+    <% if current_user.email == request.user.email && request.confirmation == "Slots Filled" %>
       <tr>
         <td><%= request.job.location %></td>
         <td><%= request.job.date %></td>
