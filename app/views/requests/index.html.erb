@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Requests</h1>
-
+<h1>Upcoming Jobs</h1>
 
   <table class = "table table-hover">
   <thead>
     <tr>
-      <th>Confirmation</th>
-      <th>User</th>
       <th>Location</th>
+      <th>Date</th>
+      <th>Day</th>
       <th>Start Time</th>
       <th>End Time</th>
       <th colspan="3"></th>
@@ -17,18 +16,53 @@
 
   <tbody>
     <% @requests.each do |request| %>
+    <% if current_user.email == request.user.email && request.job.completed == false %>
       <tr>
-        <td><%= request.confirmation %></td>
-        <td><%= request.user.email %></td>
         <td><%= request.job.location %></td>
+        <td><%= request.job.date %></td>
+        <td><%= request.job.start_time.to_time.strftime("%a") %></td>
         <td><%= request.job.start_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= request.job.end_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= link_to 'Show', request %></td>
         <td><%= link_to 'Edit', edit_request_path(request) %></td>
         <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+          <% end %>
     <% end %>
   </tbody>
 </table>
+
+<h1>Completed Jobs</h1>
+
+<table class = "table table-hover">
+<thead>
+  <tr>
+    <th>Location</th>
+    <th>Date</th>
+    <th>Day</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<tbody>
+  <% @requests.each do |request| %>
+  <% if current_user.email == request.user.email && request.job.completed == true %>
+    <tr>
+      <td><%= request.job.location %></td>
+      <td><%= request.job.date %></td>
+      <td><%= request.job.start_time.to_time.strftime("%a") %></td>
+      <td><%= request.job.start_time.to_time.strftime("%H:%M %p") %></td>
+      <td><%= request.job.end_time.to_time.strftime("%H:%M %p") %></td>
+      <td><%= link_to 'Show', request %></td>
+      <td><%= link_to 'Edit', edit_request_path(request) %></td>
+      <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+        <% end %>
+  <% end %>
+</tbody>
+</table>
+
 
 <br>
