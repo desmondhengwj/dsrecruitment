@@ -18,7 +18,7 @@
 
   <tbody>
     <% @requests.each do |request| %>
-    <% if current_user.email == request.user.email && request.confirmation == "Confirmed" %>
+    <% if current_user.email == request.user.email && request.confirmation == "Confirmed" && request.job.completed == false %>
       <tr>
         <td><%= request.job.location %></td>
         <td><%= request.job.date %></td>
@@ -48,7 +48,7 @@
 
   <tbody>
     <% @requests.each do |request| %>
-    <% if current_user.email == request.user.email && request.confirmation == "Pending" %>
+    <% if current_user.email == request.user.email && request.confirmation == "Pending" && request.job.completed == false%>
       <tr>
         <td><%= request.job.location %></td>
         <td><%= request.job.date %></td>
@@ -79,7 +79,7 @@
 
   <tbody>
     <% @requests.each do |request| %>
-    <% if current_user.email == request.user.email && request.confirmation == "Slots Filled" %>
+    <% if current_user.email == request.user.email && request.confirmation == "Slots Filled" && request.job.completed == false   %>
       <tr>
         <td><%= request.job.location %></td>
         <td><%= request.job.date %></td>
@@ -112,15 +112,13 @@
 
 <tbody>
   <% @requests.each do |request| %>
-  <% if current_user.email == request.user.email && request.job.completed == true %>
+  <% if current_user.email == request.user.email && request.confirmation == "Confirmed" && request.job.completed == true %>
     <tr>
       <td><%= request.job.location %></td>
       <td><%= request.job.date %></td>
       <td><%= request.job.start_time.to_time.strftime("%a") %></td>
       <td><%= request.job.start_time.to_time.strftime("%H:%M %p") %></td>
       <td><%= request.job.end_time.to_time.strftime("%H:%M %p") %></td>
-      <td><%= link_to 'View Details', request %></td>
-      <td><%= link_to 'Cancel', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
         <% end %>
   <% end %>
