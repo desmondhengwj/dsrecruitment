@@ -86,9 +86,6 @@
         <td><%= request.job.start_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= request.job.end_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= request.confirmation%></td>
-
-        <td><%= %></td>
-        <td><%= link_to 'Cancel', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
           <% end %>
     <% end %>
