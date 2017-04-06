@@ -21,13 +21,11 @@
 
         <header role="banner">
             <nav id="navbar-primary" class="navbar navbar-default" role="navigation">
-              <img src="http://i.imgur.com/ypwNsEW.png" alt="Logo Thing Main Logo" width="250"><br>
-              <% if user_signed_in? %>
-              Welcome <strong><%= current_user.name %>!</strong>
-              <% end %>
-
-
-
+                <img src="http://i.imgur.com/ypwNsEW.png" alt="Logo Thing Main Logo" width="250"><br>
+                <% if user_signed_in? %>
+                Welcome
+                <strong><%= current_user.name %>!</strong>
+                <% end %>
 
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,15 +40,25 @@
                     <div class="collapse navbar-collapse" id="navbar-primary-collapse">
 
                         <ul class="nav navbar-nav">
-                          <li><a href="/jobs">All Jobs</a></li>
-                          <% if user_signed_in? %>
-                          <li><a href="/requests">My Requests</a></li>
-                          <li><a href="/users/edit">Edit Profile</a></li>
-                          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-                          <% else %>
-                          <li><a href="/users/sign_up">Sign Up</a></li>
-                          <li><a href="/users/sign_in">Log In</a></li>
-                          <% end %>
+                            <li>
+                                <a href="/jobs">All Jobs</a>
+                            </li>
+                            <% if user_signed_in? %>
+                            <li>
+                                <a href="/requests">My Requests</a>
+                            </li>
+                            <li>
+                                <a href="/users/edit">Edit Profile</a>
+                            </li>
+                            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                        <% else %>
+                            <li>
+                                <a href="/users/sign_up">Sign Up</a>
+                            </li>
+                            <li>
+                                <a href="/users/sign_in">Log In</a>
+                            </li>
+                            <% end %>
                         </ul>
                         <% if notice %>
                         <p class="notice" id="notice"><%= notice %></p>
@@ -67,9 +75,8 @@
         </header>
         <!-- header role="banner" -->
 
-
         <div class="container">
-          <%= yield %>
+            <%= yield %>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

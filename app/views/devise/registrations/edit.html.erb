@@ -11,17 +11,17 @@
 
   <div class="field">
   <%= f.label :name, 'Full name as of NRIC' %>
-  <%= f.text_field :name, autofocus: true, :required => true, :size => 60 %>
+  <%= f.text_field :name, autofocus: true, :required => true, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
   <%= f.label :nric, 'NRIC' %>
-  <%= f.text_field :nric, :required => true, :size => 60 %>
+  <%= f.text_field :nric, :required => true, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
   <%= f.label :contact, 'Contact Number' %>
-  <%= f.text_field :contact, :required => true, :size => 60 %>
+  <%= f.text_field :contact, :required => true, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
@@ -31,12 +31,12 @@
 
   <div class="field">
   <%= f.label :date_of_birth, 'Date of Birth' %>
-  <%= f.date_field :date_of_birth, :required => true, :size => 60 %>
+  <%= f.date_field :date_of_birth, :required => true, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
   <%= f.label :address, 'Address' %>
-  <%= f.text_field :address, :required => true, :size => 60 %>
+  <%= f.text_field :address, :required => true, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
@@ -46,17 +46,17 @@
 
   <div class="field">
   <%= f.label :student_school, 'If you are a student, which school are you currently studying in?' %>
-  <%= f.text_field :student_school, :size => 60 %>
+  <%= f.text_field :student_school, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
   <%= f.label :bank_name, 'Bank Name' %>
-  <%= f.text_field :bank_name, :required => true, :size => 60 %>
+  <%= f.text_field :bank_name, :required => true, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
   <%= f.label :bank_account_number, 'Bank Account Number' %>
-  <%= f.text_field :bank_account_number, :required => true, :size => 60 %>
+  <%= f.text_field :bank_account_number, :required => true, :size => 60, autocomplete: "off" %>
   </div>
 
   <div class="field">
@@ -85,23 +85,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
+      <i>(leave blank if you don't want to change it)</i><br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", :size => 60 %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.label :current_password %>
+    <%= f.password_field :current_password, autocomplete: "off", :size => 60 %>
   </div>
+  <i>(we need your current password to confirm your changes)</i><br />
+  <br>
 
   <div class="actions">
     <%= f.submit "Update" %>
