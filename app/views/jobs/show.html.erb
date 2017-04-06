@@ -4,8 +4,6 @@
     <div class="panel-body">
       <div><strong>Date:</strong>
       <%= @job.date %></div>
-      <div><strong>Day:</strong>
-      <%= @job.start_time.to_time.strftime("%a") %></div>
       <div><strong>Start time:</strong>
       <%= @job.start_time.to_time.strftime("%H:%M %p") %></div>
       <div><strong>End time:</strong>

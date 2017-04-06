@@ -9,7 +9,6 @@
     <tr>
       <th>Location</th> <br>
       <th>Date</th>
-      <th>Day</th>
       <th>Start time</th>
       <th>End time</th>
       <th>No of slots</th>
@@ -25,7 +24,6 @@
       <tr>
         <td><%= job.location %></td>
         <td><%= job.date %></td>
-        <td><%= job.start_time.to_time.strftime("%a") %></td>
         <td><%= job.start_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= job.end_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= job.no_of_slots %></td>
@@ -51,7 +49,6 @@
     <tr>
       <th>Location</th> <br>
       <th>Date</th>
-      <th>Day</th>
       <th>Start time</th>
       <th>End time</th>
       <th>No of slots</th>
@@ -67,7 +64,6 @@
       <tr>
         <td><%= job.location %></td>
         <td><%= job.date %></td>
-        <td><%= job.start_time.to_time.strftime("%a") %></td>
         <td><%= job.start_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= job.end_time.to_time.strftime("%H:%M %p") %></td>
         <td><%= job.no_of_slots %></td>
