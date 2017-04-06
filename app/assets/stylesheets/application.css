@@ -14,10 +14,88 @@
  *= require_self
  */
 
- #footer {
-     position: absolute;
-     bottom: 0;
-     width: 644px;
-     height: 20px;
-     margin: 0 auto;
- }
+html * {
+  color: #000 !important;
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+body {
+    background-color: #DCDCDC;
+}
+
+div.fill-screen {
+    position: center;
+    left: 10;
+    right: 10;
+    top: 60;
+    bottom: 60;
+    text-align: center;
+}
+
+img.make-it-fit {
+    max-width: 99%;
+    max-height: 99%;
+}
+
+#navbar-primary.navbar-default {
+  text-align: center;
+  background: transparent;
+  border: none;
+  .navbar-nav {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    > li {
+      display: inline-block;
+      float: none;
+      > a {
+        padding-left: 30px;
+        padding-right: 30px;
+        }
+    }
+  }
+}
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+#editform  {
+  padding: 0;
+  text-align: center;
+    margin: 0 auto;
+}
+
+#loginform {
+  padding: 0;
+  text-align: center;
+    margin: 0 auto;
+}
+
+#signup {
+  padding: 0;
+  text-align: center;
+    margin: 0 auto;
+}
+
+#notice {
+  background: transparent;
+  border: none;
+}
+
+.field input {
+    color: #999;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px;
+    background-color: #DCDCDC;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid black;
+
+}
