@@ -19,6 +19,9 @@ $ rails server
 * Jobs
 * Request
 
+## ERD Diagram
+
+![DS Recruitment ERD Diagram](https://cloud.githubusercontent.com/assets/25132146/24781905/5bb60b64-1b75-11e7-83e3-b05b05095c6c.jpg)
 
 ## Built with
 * Ruby on rails
