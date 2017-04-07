@@ -13,3 +13,17 @@ $ cd dsrecruitment
 $ bundle install
 $ rails server
 ```
+
+## Models
+* User
+* Jobs
+* Request
+
+
+## Built with
+* Ruby on rails
+* Bootstrap
+
+## Credits
+* Prima, Jeremiah, Kang
+* My incredible classmates!
